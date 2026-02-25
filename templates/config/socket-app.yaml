@@ -1,0 +1,11 @@
+#general:
+  #app:
+    #module: '@where-org/where-socket-app-general'
+
+    #meta:
+      #credential: credential
+
+    #credential:
+      #broadcast: false
+      #notification: true
+      #loopback: false

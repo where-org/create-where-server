@@ -1,0 +1,20 @@
+{
+  "name": "create-where-server",
+  "version": "2.0.2",
+  "description": "Scaffold a new where-server project",
+  "license": "MIT",
+  "author": "Masafumi Sasahara <masafumi@sashara.io> (https://github.com/masafumi-sasahara/)",
+  "homepage": "https://where-org.com/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/where-org/create-where-server.git"
+  },
+  "type": "module",
+  "bin": {
+    "create-where-server": "index.js"
+  },
+  "dependencies": {
+    "fs-extra": "^11.1.1",
+    "prompts": "^2.4.2"
+  }
+}

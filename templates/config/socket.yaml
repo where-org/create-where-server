@@ -1,0 +1,5 @@
+ws:
+  prefix: /where
+  allow:
+  - '*'
+  subProtocol: '*'

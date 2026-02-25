@@ -1,0 +1,16 @@
+{
+  "name": "where-server",
+  "description": "Enter your project description here",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "where-server": "./bin/where-server.js"
+  },
+  "scripts": {
+    "start": "NODE_ENV=$npm_config_mode node ./bin/where-server.js ./config",
+    "dev": "NODE_ENV=$npm_config_mode node --watch ./bin/where-server.js ./config"
+  },
+  "dependencies": {
+  }
+}

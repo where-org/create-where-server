@@ -1,0 +1,13 @@
+services:
+  where-server:
+    container_name: where-server
+    build: .
+    image: where-server
+    restart: unless-stopped
+    ports:
+      - "5570:5570"
+
+    # for development
+    #
+    # volumes:
+    #   - ./config:/app/config
