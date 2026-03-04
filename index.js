@@ -11,8 +11,10 @@ import prompts from 'prompts';
 const main = async () => {
 
   // package
-  const serverPackage = { name: '@where-org/where-server', version: '^2.0.0', },
-        socketPackage = { name: '@where-org/where-socket', version: '^2.0.0', };
+  const serverPackage = { name: '@where-org/where-server', version: '^2.0.0', };
+
+  const socketPackage = { name: '@where-org/where-socket', version: '^2.0.0', },
+        socketAppGeneralPackage = { name: '@where-org/where-socket-app-general', version: '^2.0.0', };
 
   // config
   const socketConfig = ['config/socket.yaml', 'config/socket-app.yaml'];
@@ -43,7 +45,7 @@ const main = async () => {
     //socket
     type   : socket !== undefined ? null : 'confirm',
     name   : 'socket',
-    message: 'Would you like to add where-socket?:'
+    message: 'Would you like to add where-socket and where-socket-app-general?:'
   }]);
 
   const packageName = name ?? result.name;
@@ -63,6 +65,7 @@ const main = async () => {
 
   if (socket || result.socket) {
     packageJson.dependencies[socketPackage.name] = socketPackage.version;
+    packageJson.dependencies[socketAppGeneralPackage.name] = socketAppGeneralPackage.version;
 
     socketConfig.forEach(v => (
       fs.copySync(path.resolve(srcDir, v), path.resolve(destDir, v))
@@ -75,7 +78,8 @@ const main = async () => {
 
   console.log(`
   cd ${packageName}
-  npm i
+  npm install
+  # Before starting, install the required where-servet-app modules and edit config/server-app.yaml.
   npm start`);
 
 };
