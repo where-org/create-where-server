@@ -8,8 +8,8 @@
     "where-server": "./bin/where-server.js"
   },
   "scripts": {
-    "start": "NODE_ENV=$npm_config_mode node ./bin/where-server.js ./config",
-    "dev": "NODE_ENV=$npm_config_mode node --watch ./bin/where-server.js ./config"
+    "start": "NODE_ENV=$npm_config_mode node --env-file=./.env ./bin/where-server.js ./config",
+    "dev": "NODE_ENV=$npm_config_mode node --env-file=./.env --watch ./bin/where-server.js ./config"
   },
   "dependencies": {
   }

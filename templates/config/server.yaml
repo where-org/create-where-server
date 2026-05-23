@@ -13,11 +13,6 @@ cors:
   - http://localhost:5570
   # - '*'
 
-token:
-  mode: symmetric
-  issuer: http://localhost:5570/where
-  audience: []
-
 static:
   prefix: ''
   dir: ../public
